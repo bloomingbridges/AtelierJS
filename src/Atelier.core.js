@@ -27,9 +27,9 @@ var AtelierJS = {};
 		sprites: {},
 		 sounds: {},
 
-		register: function(id, path) {	
+		register: function(id, ref) {	
 			// TODO Support more data types (e.g. sounds) //////////////////////
-			this.assets[id] = loader.addImage(path);
+			this.assets[id] = ref;
 		},
 
 		add: function(id, sprite, override) {
@@ -273,6 +273,10 @@ var AtelierJS = {};
 			}
 			this.subStage.addChild(tmp);
 			return tmp;
+		},
+
+		addChild: function(child) {
+			this.subStage.addChild(child);
 		},
 
 		update: function() {
